@@ -1,3 +1,6 @@
+let g:python3_host_prog = 'C:\Users\Nha\AppData\Local\Programs\Python\Python38\python.EXE'
+let g:python_host_prog = 'C:\Users\Nha\AppData\Local\Programs\Python\Python38\python.EXE'
+
 " Config ale
 let g:ale_disable_lsp = 1
 
@@ -97,8 +100,6 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 "auto header cpp"
 autocmd BufNewFile *.cpp r D:\BaitapC++\CodeMau.cpp
 
-let g:python3_host_prog = 'C:\Users\Nha\AppData\Local\Programs\Python\Python38\python.EXE'
-let g:python_host_prog = 'C:\Users\Nha\AppData\Local\Programs\Python\Python38\python.EXE'
 
 " Ale config 
 let g:ale_fixers = {
@@ -110,11 +111,3 @@ let g:ale_sign_warning = '⚠️'
 
 let g:ale_fix_on_save = 1
 
-
-if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
-  let g:coc_global_extensions += ['coc-prettier']
-endif
-
-if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
-  let g:coc_global_extensions += ['coc-eslint']
-endif
