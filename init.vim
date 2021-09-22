@@ -2,7 +2,7 @@ let g:python3_host_prog = 'C:\Users\Nha\AppData\Local\Programs\Python\Python38\p
 let g:python_host_prog = 'C:\Users\Nha\AppData\Local\Programs\Python\Python38\python.EXE'
 
 " Config ale
-let g:ale_disable_lsp = 1
+"let g:ale_disable_lsp = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> Vim Plug
@@ -18,7 +18,7 @@ Plug 'vim-airline/vim-airline-themes'
 
 " Better Syntax Support
 Plug 'sheerun/vim-polyglot'
-Plug 'w0rp/ale'
+"Plug 'w0rp/ale'
 
 " File Explorer
 Plug 'scrooloose/NERDTree'
