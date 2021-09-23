@@ -48,3 +48,6 @@ let g:indentLine_color_gui = '#363442'
 
 " Font
 set guifont=SpaceMono\ NF:h10
+
+" detect .md as markdown instead of modula-2
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown

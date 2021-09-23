@@ -23,3 +23,18 @@ autocmd VimEnter * call AirlineInit()
 
 " Set this. Airline will handle the rest.
 let g:airline#extensions#ale#enabled = 1
+
+" disable unused extensions (performance)
+let g:airline#extensions#bufferline#enabled = 0
+let g:airline#extensions#capslock#enabled   = 0
+let g:airline#extensions#csv#enabled        = 0
+let g:airline#extensions#ctrlspace#enabled  = 0
+let g:airline#extensions#eclim#enabled      = 0
+let g:airline#extensions#hunks#enabled      = 0
+let g:airline#extensions#nrrwrgn#enabled    = 0
+let g:airline#extensions#promptline#enabled = 0
+let g:airline#extensions#syntastic#enabled  = 0
+let g:airline#extensions#taboo#enabled      = 0
+let g:airline#extensions#tagbar#enabled     = 0
+let g:airline#extensions#virtualenv#enabled = 0
+let g:airline#extensions#whitespace#enabled = 0
