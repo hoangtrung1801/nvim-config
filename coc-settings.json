@@ -22,11 +22,11 @@
   "signature.preferShownAbove": true,
 
   // Omg
-  "codeLens.enable": true,
-  "typescript.implementationsCodeLens.enable": false,
-  "typescript.referencesCodeLens.enable": false,
-  "javascript.implementationsCodeLens.enable": false,
-  "javascript.referencesCodeLens.enable": false,
+  //"codeLens.enable": true,
+  //"typescript.implementationsCodeLens.enable": false,
+  //"typescript.referencesCodeLens.enable": false,
+  //"javascript.implementationsCodeLens.enable": false,
+  //"javascript.referencesCodeLens.enable": false,
 
   "suggest.completionItemKindLabels": {
     "keyword": "\uf1de",
