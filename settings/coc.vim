@@ -120,3 +120,7 @@ nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
 nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
 
 nmap <leader>do <Plug>(coc-codeaction)
+
+" Action for react
+xmap <leader>ra  <Plug>(coc-codeaction-selected)
+nmap <leader>ra  <Plug>(coc-codeaction-selected)
