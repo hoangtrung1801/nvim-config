@@ -5,12 +5,16 @@
 local M = {}
 
 M.ui = {
-	theme = "onedark",
+	theme = "nord",
 
-	-- hl_override = {
-	-- 	Comment = { italic = true },
-	-- 	["@comment"] = { italic = true },
-	-- },
+  statusline = {
+    theme = "vscode",
+  },
+
+	hl_override = {
+		Comment = { italic = true },
+		["@comment"] = { italic = true },
+	},
 }
 
 return M
