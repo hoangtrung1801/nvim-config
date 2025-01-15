@@ -27,8 +27,15 @@ return {
     "nvim-tree/nvim-tree.lua",
     opts = {
       view = {
-        side = 'right'
-      }
-    }
-  }
+        side = "right",
+      },
+    },
+  },
+
+  {
+    "github/copilot.vim",
+    lazy = false,
+  },
+
+
 }
