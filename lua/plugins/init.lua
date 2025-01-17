@@ -30,12 +30,5 @@ return {
         side = "right",
       },
     },
-  },
-
-  {
-    "github/copilot.vim",
-    lazy = false,
-  },
-
-
+  }
 }
