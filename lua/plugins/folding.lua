@@ -1,46 +1,46 @@
---- Show total number of lines in a fold
-local folding_handler = function(virtual_text, left_number, end_line_number, width, truncate)
-  local new_virtual_text = {}
-  local suffix = (" 󰁂 %d "):format(end_line_number - left_number)
-  local suffix_width = vim.fn.strdisplaywidth(suffix)
-  local target_width = width - suffix_width
-  local current_width = 0
-  for _, chunk in ipairs(virtual_text) do
-    local chunk_text = chunk[1]
-    local chunk_width = vim.fn.strdisplaywidth(chunk_text)
-    if target_width > current_width + chunk_width then
-      table.insert(new_virtual_text, chunk)
-    else
-      chunk_text = truncate(chunk_text, target_width - current_width)
-      local hl_group = chunk[2]
-      table.insert(new_virtual_text, { chunk_text, hl_group })
-      chunk_width = vim.fn.strdisplaywidth(chunk_text)
-      -- str width returned from truncate() may less than 2nd argument, need padding
-      if current_width + chunk_width < target_width then
-        suffix = suffix .. (" "):rep(target_width - current_width - chunk_width)
-      end
-      break
-    end
-    current_width = current_width + chunk_width
-  end
-  table.insert(new_virtual_text, { suffix, "MoreMsg" })
-  return new_virtual_text
-end
-
 return {
-  -- {
-  --   "kevinhwang91/nvim-ufo",
-  --   dependencies = {
-  --     "kevinhwang91/promise-async",
-  --   },
-  --   event = "BufReadPost",
-  --   opts = {
-  --     -- Use treesitter as a main provider
-  --     provider_selector = function()
-  --       return { "treesitter", "indent" }
-  --     end,
-  --   },
-  -- },
-  --
-}
 
+  -- add folding range to capabilities
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      capabilities = {
+        textDocument = {
+          foldingRange = {
+            dynamicRegistration = false,
+            lineFoldingOnly = true,
+          },
+        },
+      },
+    },
+  },
+
+  {
+    "kevinhwang91/nvim-ufo",
+    dependencies = { "kevinhwang91/promise-async" },
+    event = "BufRead",
+    opts = {},
+    config = function()
+      -- Fold options
+      vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+      -- vim.o.foldcolumn = "1" -- '0' is not bad
+      vim.o.foldlevel = 99   -- Using ufo provider need a large value, feel free to decrease the value
+      vim.o.foldlevelstart = 99
+      vim.o.foldenable = false
+      require("ufo").setup({
+        provider_selector = function()
+          return { "treesitter", "indent" }
+        end,
+      })
+    end,
+    -- init = function()
+    --   -- Using ufo provider need remap `zR` and `zM`. If Neovim is 0.6.1, remap yourself
+    --   vim.keymap.set("n", "zR", function()
+    --     require("ufo").openAllFolds()
+    --   end)
+    --   vim.keymap.set("n", "zM", function()
+    --     require("ufo").closeAllFolds()
+    --   end)
+    -- end,
+  },
+}
