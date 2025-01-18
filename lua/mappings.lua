@@ -12,4 +12,3 @@ map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
 
 local nomap = vim.keymap.del
-

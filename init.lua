@@ -35,3 +35,9 @@ require "nvchad.autocmds"
 vim.schedule(function()
   require "mappings"
 end)
+
+if vim.fn.executable "pwsh" == 1 then
+  vim.o.shell = "pwsh.exe"
+else
+  vim.o.shell = "powershell.exe"
+end
