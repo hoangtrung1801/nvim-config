@@ -47,6 +47,11 @@ return {
         -- navigate buffer tabs
         ["<S-K>"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
         ["<S-J>"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
+        [";"] = { ":" },
+
+        ["<leader>e"] = {
+          "<cmd>NvimTreeToggle<cr>",
+        },
 
         -- mappings seen under group name "Buffer"
         -- ["<Leader>bd"] = {
@@ -64,6 +69,9 @@ return {
 
         -- setting a mapping to false will disable it
         -- ["<C-S>"] = false,
+      },
+      t = {
+        ["<C-X>"] = { "<C-\\><C-N>", desc = "Exit terminal mode" },
       },
     },
   },
