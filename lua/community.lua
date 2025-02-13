@@ -9,6 +9,7 @@ return {
   -- import/override with your plugins folder
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.colorscheme.nord-nvim" },
+  { import = "astrocommunity.colorscheme.gruvbox-nvim" },
   { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.completion.copilot-lua-cmp" },
   { import = "astrocommunity.pack.typescript" },
