@@ -1,7 +1,8 @@
 return {
-  { 'nvim-neotest/neotest-plenary' },
+  { 'nvim-neotest/neotest-plenary', enabled = false },
   {
     'nvim-neotest/neotest',
+    enabled = false,
     dependencies = {
       'nvim-neotest/nvim-nio',
       'nvim-neotest/neotest-jest',

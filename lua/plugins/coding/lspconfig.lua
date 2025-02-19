@@ -240,7 +240,7 @@ return {
         'astro-language-server',
         'css-lsp',
         'debugpy',
-        'delve',
+        -- 'delve',
         'docker-compose-language-service',
         'dockerfile-language-server',
         'eslint-lsp',

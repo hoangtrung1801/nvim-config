@@ -86,13 +86,14 @@ return {
         desc = 'Buffers',
       },
       { '<leader>ff', '<cmd>FzfLua files<cr>', desc = 'Files' },
-      { '<leader><space>', '<cmd>FzfLua files<cr>', desc = 'Find Files' },
+      { '<leader>p', '<cmd>FzfLua files<cr>', desc = 'Find Files' },
       { '<leader>fg', '<cmd>FzfLua git_files<cr>', desc = 'Git-files' },
 
       -- search
       { '<leader>s"', '<cmd>FzfLua registers<cr>', desc = 'Registers' },
       { '<leader>sa', '<cmd>FzfLua autocmds<cr>', desc = 'Auto Commands' },
-      { '<leader>sb', '<cmd>FzfLua grep_curbuf<cr>', desc = 'Buffer' },
+      -- { '<leader>sb', '<cmd>FzfLua grep_curbuf<cr>', desc = 'Buffer' },
+      { '<leader>sb', '<cmd>Telescope grep_string<cr>', desc = 'Buffer' },
       {
         '<leader>sc',
         '<cmd>FzfLua command_history<cr>',

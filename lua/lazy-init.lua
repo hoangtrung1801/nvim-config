@@ -47,6 +47,7 @@ require('lazy').setup({
     { import = 'plugins.ui.dressing' },
     { import = 'plugins.ui.treesitter-context' },
     { import = 'plugins.util.mini-hipatterns' },
+    { import = 'plugins.coding.fold' },
   },
   defaults = {},
   performance = {
@@ -82,5 +83,8 @@ require('lazy').setup({
       task = '📌',
       lazy = '💤 ',
     },
+  },
+  install = {
+    -- colorscheme = { 'nord' },
   },
 })

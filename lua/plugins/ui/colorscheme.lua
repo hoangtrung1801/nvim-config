@@ -12,4 +12,21 @@ return {
       vim.cmd [[colorscheme cyberdream]]
     end,
   },
+  -- {
+  --   'gbprod/nord.nvim',
+  --   lazy = false,
+  --   priority = 10000,
+  --   config = function()
+  --     -- require('nord').setup {
+  --     --   transparent = true,
+  --     --   italic_comments = true,
+  --     --   borderless_telescope = false,
+  --     -- }
+  --     require('nord').setup {
+  --       transparent = true,
+  --     }
+  --     vim.cmd [[colorscheme nord]]
+  --     -- vim.cmd.colorscheme('nord')
+  --   end,
+  -- },
 }
