@@ -153,4 +153,12 @@ return {
       vim.keymap.set('n', 'gy', '<cmd>FzfLua lsp_typedefs        jump_to_single_result=true ignore_current_line=true<cr>', { desc = "Goto Type Definitions" })
     end,
   },
+  {
+    'ibhagwan/fzf-lua',
+    -- optional for icon support
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    -- or if using mini.icons/mini.nvim
+    -- dependencies = { "echasnovski/mini.icons" },
+    opts = {},
+  },
 }
