@@ -10,8 +10,7 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 require('lazy').setup({
   spec = {
     'tpope/vim-sleuth',
-    { import = 'plugins.coding.autopairs' },
-    { import = 'plugins.coding.cmp' },
+    { import = 'plugins.coding.completion' },
     { import = 'plugins.coding.codecompanion' },
     { import = 'plugins.coding.inc-rename' },
     { import = 'plugins.coding.lspconfig' },
@@ -47,7 +46,6 @@ require('lazy').setup({
     { import = 'plugins.ui.bufferline' },
     { import = 'plugins.ui.dressing' },
     { import = 'plugins.ui.treesitter-context' },
-    { import = 'plugins.util.mini-hipatterns' },
     { import = 'plugins.coding.fold' },
   },
   defaults = {},
