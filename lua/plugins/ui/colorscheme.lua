@@ -10,7 +10,7 @@ return {
         borderless_telescope = false,
       }
       -- vim.cmd [[colorscheme cyberdream-light]]
-      vim.cmd [[colorscheme cyberdream-light]]
+      vim.cmd [[colorscheme cyberdream]]
     end,
   },
   -- {

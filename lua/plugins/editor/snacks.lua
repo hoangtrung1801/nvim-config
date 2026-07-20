@@ -6,7 +6,10 @@ return {
     ---@type snacks.Config
     opts = {
       bigfile = { enabled = true },
-      explorer = { enabled = true },
+      explorer = {
+        enabled = true,
+        layout = { preset = 'sidebar', position = 'right' },
+      },
       indent = {
         enabled = true,
         animate = { enabled = false },
@@ -16,7 +19,14 @@ return {
         enabled = true,
         timeout = 3000,
       },
-      picker = { enabled = true },
+      picker = {
+        enabled = true,
+        sources = {
+          explorer = {
+            layout = { layout = { position = 'right' } },
+          },
+        },
+      },
       quickfile = { enabled = true },
       scope = { enabled = true },
       statuscolumn = { enabled = true },
