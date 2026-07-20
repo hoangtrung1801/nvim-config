@@ -1,10 +1,10 @@
 return {
   {
     'MeanderingProgrammer/render-markdown.nvim',
-    ft = { 'markdown', 'markdown.mdx' },
+    ft = { 'markdown', 'markdown.mdx', 'mdx' },
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
     opts = {
-      file_types = { 'markdown', 'markdown.mdx' },
+      file_types = { 'markdown', 'markdown.mdx', 'mdx' },
       code = { sign = false, width = 'block', right_pad = 1 },
       heading = { sign = false, icons = {} },
       checkbox = { enabled = false },

@@ -136,7 +136,9 @@ return {
       },
     },
     cssls = {},
-    marksman = {},
+    marksman = {
+      filetypes = { 'markdown', 'markdown.mdx', 'mdx' },
+    },
   },
   tools = {
     'astro-language-server',
@@ -203,6 +205,7 @@ return {
     lua = { 'stylua' },
     markdown = prettier,
     ['markdown.mdx'] = prettier,
+    mdx = prettier,
     python = { 'ruff_organize_imports', 'ruff_format' },
     scss = prettier,
     typescript = prettier,
@@ -215,5 +218,6 @@ return {
     dockerfile = { 'hadolint' },
     markdown = { 'markdownlint-cli2' },
     ['markdown.mdx'] = { 'markdownlint-cli2' },
+    mdx = { 'markdownlint-cli2' },
   },
 }

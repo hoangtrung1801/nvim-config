@@ -30,6 +30,32 @@ if ok then
       name .. ' missing from vim.lsp.config'
     )
   end
+
+  h.check(
+    failures,
+    vim.filetype.match { filename = 'docker-compose.yml' }
+      == 'yaml.docker-compose',
+    'Docker Compose filetype routing is missing'
+  )
+  h.check(
+    failures,
+    vim.tbl_contains(
+      vim.lsp.config.docker_compose_language_service.filetypes or {},
+      'yaml.docker-compose'
+    ),
+    'Docker Compose LSP filetype is missing'
+  )
+  h.check(
+    failures,
+    vim.tbl_contains(vim.lsp.config.marksman.filetypes or {}, 'mdx'),
+    'Marksman must support the mdx filetype'
+  )
+  h.check(
+    failures,
+    registry.formatters_by_ft.mdx ~= nil,
+    'MDX formatter is missing'
+  )
+  h.check(failures, registry.linters_by_ft.mdx ~= nil, 'MDX linter is missing')
 end
 
 h.finish(failures)
