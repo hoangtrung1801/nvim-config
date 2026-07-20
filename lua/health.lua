@@ -17,7 +17,7 @@ local check_version = function()
     return
   end
 
-  if vim.version.ge(vim.version(), '0.10-dev') then
+  if vim.version.ge(vim.version(), '0.11.3') then
     vim.health.ok(string.format("Neovim version is: '%s'", verstr))
   else
     vim.health.error(
@@ -30,8 +30,7 @@ local check_version = function()
 end
 
 local check_external_reqs = function()
-  -- Basic utils: `git`, `make`, `unzip`
-  for _, exe in ipairs { 'git', 'make', 'unzip', 'rg' } do
+  for _, exe in ipairs { 'git', 'make', 'unzip', 'rg', 'fd' } do
     local is_executable = vim.fn.executable(exe) == 1
     if is_executable then
       vim.health.ok(string.format("Found executable: '%s'", exe))
@@ -58,5 +57,7 @@ return {
 
     check_version()
     check_external_reqs()
+    vim.health.info 'Run :MasonToolsInstall to install or update configured language tools.'
+    vim.health.info 'Run :checkhealth vim.lsp to diagnose language-server activation.'
   end,
 }

@@ -1,7 +1,8 @@
 return {
   {
-    "davidmh/mdx.nvim",
+    'davidmh/mdx.nvim',
+    ft = { 'mdx', 'markdown.mdx' },
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
     config = true,
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
   },
 }

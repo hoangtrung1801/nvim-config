@@ -6,6 +6,7 @@
 return {
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
+    event = { 'BufReadPre', 'BufNewFile' },
     opts = function(_, opts)
       opts.signs = {
         add = { text = '+' },
@@ -80,9 +81,9 @@ return {
         -- Toggles
         map(
           'n',
-          '<leader>gbl',
+          '<leader>gbt',
           gitsigns.toggle_current_line_blame,
-          { desc = 'Blame Line' }
+          { desc = 'Toggle Line Blame' }
         )
         map(
           'n',

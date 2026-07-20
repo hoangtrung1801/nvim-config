@@ -1,15 +1,13 @@
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
-  -- bootstrap lazy.nvim
   -- stylua: ignore
-  vim.fn.system({ "git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=stable",
-    lazypath })
+  vim.fn.system({ 'git', 'clone', '--filter=blob:none', 'https://github.com/folke/lazy.nvim.git', '--branch=stable', lazypath })
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
-require('lazy').setup({
+require('lazy').setup {
   spec = {
-    'tpope/vim-sleuth',
+    { 'tpope/vim-sleuth', event = { 'BufReadPost', 'BufNewFile' } },
     { import = 'plugins.coding.completion' },
     { import = 'plugins.coding.codecompanion' },
     { import = 'plugins.coding.inc-rename' },
@@ -17,7 +15,6 @@ require('lazy').setup({
     { import = 'plugins.coding.todo-comments' },
     { import = 'plugins.coding.treesitter' },
     { import = 'plugins.coding.trouble' },
-    { import = 'plugins.dap.core' },
     { import = 'plugins.editor.gitsigns' },
     { import = 'plugins.editor.grug-far' },
     { import = 'plugins.editor.leap' },
@@ -31,30 +28,13 @@ require('lazy').setup({
     { import = 'plugins.languages.mdx' },
     { import = 'plugins.languages.python' },
     { import = 'plugins.linting.core' },
-    { import = 'plugins.test.core' },
-    { import = 'plugins.ui.colorscheme' },
     { import = 'plugins.ui.bufferline' },
+    { import = 'plugins.ui.colorscheme' },
     { import = 'plugins.ui.treesitter-context' },
   },
-  defaults = {},
-  performance = {
-    rtp = {
-      disabled_plugins = {
-        'gzip',
-        'tarPlugin',
-        'zipPlugin',
-        'netrwPlugin',
-        'matchit',
-        'matchparen',
-        'shada',
-        'spellfile',
-      },
-    },
-  },
-}, {
+  defaults = { lazy = true },
+  install = { colorscheme = { 'cyberdream' } },
   ui = {
-    -- If you are using a Nerd Font: set icons to an empty table which will use the
-    -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
     icons = vim.g.have_nerd_font and {} or {
       cmd = '⌘',
       config = '🛠',
@@ -64,14 +44,25 @@ require('lazy').setup({
       keys = '🗝',
       plugin = '🔌',
       runtime = '💻',
-      require = '🌙',
       source = '📄',
       start = '🚀',
       task = '📌',
       lazy = '💤 ',
     },
   },
-  install = {
-    -- colorscheme = { 'nord' },
+  performance = {
+    rtp = {
+      disabled_plugins = {
+        'gzip',
+        'matchit',
+        'matchparen',
+        'netrwPlugin',
+        'spellfile',
+        'tarPlugin',
+        'tohtml',
+        'tutor',
+        'zipPlugin',
+      },
+    },
   },
-})
+}

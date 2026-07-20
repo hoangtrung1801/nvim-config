@@ -1,7 +1,7 @@
 return {
   {
     'folke/which-key.nvim',
-    event = 'VimEnter',
+    event = 'VeryLazy',
     opts = {
       preset = 'helix',
       delay = 0,
@@ -58,11 +58,6 @@ return {
           icon = { icon = '', color = 'green' },
         },
         {
-          '<leader>d',
-          group = 'Debug',
-          icon = { icon = '', color = 'red' },
-        },
-        {
           '<leader>f',
           group = 'Find',
           icon = { icon = '󰈞', color = 'yellow' },
@@ -101,11 +96,6 @@ return {
           '<leader>w',
           group = 'Windows',
           icon = { icon = '', color = 'cyan' },
-        },
-        {
-          '<leader>t',
-          group = 'Test',
-          icon = { icon = '󰙨', color = 'purple' },
         },
         {
           'gz',
