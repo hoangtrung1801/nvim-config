@@ -98,6 +98,11 @@ return {
           icon = { icon = '', color = 'yellow' },
         },
         {
+          '<leader>w',
+          group = 'Windows',
+          icon = { icon = '', color = 'cyan' },
+        },
+        {
           '<leader>t',
           group = 'Test',
           icon = { icon = '󰙨', color = 'purple' },
