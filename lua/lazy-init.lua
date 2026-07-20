@@ -27,7 +27,6 @@ require('lazy').setup({
     { import = 'plugins.editor.snacks' },
     { import = 'plugins.editor.which-key' },
     { import = 'plugins.formatting.conform' },
-    { import = 'plugins.formatting.prettier' },
     { import = 'plugins.languages.markdown' },
     { import = 'plugins.languages.mdx' },
     { import = 'plugins.languages.python' },
@@ -36,7 +35,6 @@ require('lazy').setup({
     { import = 'plugins.ui.colorscheme' },
     { import = 'plugins.ui.bufferline' },
     { import = 'plugins.ui.treesitter-context' },
-    { import = 'plugins.coding.fold' },
   },
   defaults = {},
   performance = {

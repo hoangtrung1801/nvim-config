@@ -60,3 +60,16 @@ vim.opt.cursorline = false
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
+
+-- Native Tree-sitter folds start open and avoid an extra folding plugin.
+vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
+vim.opt.foldenable = true
+vim.opt.fillchars:append {
+  fold = ' ',
+  foldopen = '',
+  foldsep = ' ',
+  foldclose = '',
+}
