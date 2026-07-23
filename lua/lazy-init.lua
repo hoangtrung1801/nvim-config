@@ -9,6 +9,7 @@ require('lazy').setup {
   spec = {
     { 'tpope/vim-sleuth', event = { 'BufReadPost', 'BufNewFile' } },
     { import = 'plugins.coding.completion' },
+    { import = 'plugins.coding.copilot' },
     { import = 'plugins.coding.codecompanion' },
     { import = 'plugins.coding.inc-rename' },
     { import = 'plugins.coding.lspconfig' },

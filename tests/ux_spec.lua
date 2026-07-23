@@ -41,6 +41,9 @@ for _, lhs in ipairs {
   '<leader>sS',
   '<leader>wv',
   '<leader>ws',
+  '<leader>qs',
+  '<leader>qr',
+  '<leader>qd',
   's',
 } do
   helpers.check(failures, has_normal_map(lhs), lhs .. ' mapping is missing')

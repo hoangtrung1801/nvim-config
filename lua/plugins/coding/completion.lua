@@ -4,6 +4,7 @@ return {
     version = '1.*',
     event = 'InsertEnter',
     dependencies = {
+      'fang2hou/blink-copilot',
       {
         'folke/lazydev.nvim',
         ft = 'lua',
@@ -38,11 +39,17 @@ return {
       },
       signature = { enabled = true },
       sources = {
-        default = { 'lsp', 'path', 'snippets', 'buffer' },
+        default = { 'lsp', 'path', 'snippets', 'buffer', 'copilot' },
         per_filetype = {
           lua = { inherit_defaults = true, 'lazydev' },
         },
         providers = {
+          copilot = {
+            name = 'Copilot',
+            module = 'blink-copilot',
+            async = true,
+            score_offset = 100,
+          },
           lazydev = {
             name = 'LazyDev',
             module = 'lazydev.integrations.blink',

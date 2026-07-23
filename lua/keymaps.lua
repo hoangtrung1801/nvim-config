@@ -15,6 +15,21 @@ keymap.set('n', '<tab>', ':tabnext<Return>', opts)
 keymap.set('n', '<s-tab>', ':tabprev<Return>', opts)
 keymap.set('n', '<leader><tab>d', ':tabclose<Return>', opts)
 
+-- Sessions
+keymap.set('n', '<leader>qs', '<cmd>SessionSave<cr>', { desc = 'Save Session' })
+keymap.set(
+  'n',
+  '<leader>qr',
+  '<cmd>SessionRestore<cr>',
+  { desc = 'Restore Session' }
+)
+keymap.set(
+  'n',
+  '<leader>qd',
+  '<cmd>SessionDelete<cr>',
+  { desc = 'Delete Session' }
+)
+
 -- IncRename
 vim.keymap.set('n', '<leader>cr', function()
   return ':IncRename ' .. vim.fn.expand '<cword>'

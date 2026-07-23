@@ -6,8 +6,10 @@ local lazy_options = require('lazy.core.config').options
 local required = {
   'blink.cmp',
   'bufferline.nvim',
+  'blink-copilot',
   'codecompanion.nvim',
   'conform.nvim',
+  'copilot.lua',
   'gitsigns.nvim',
   'grug-far.nvim',
   'lazy.nvim',
