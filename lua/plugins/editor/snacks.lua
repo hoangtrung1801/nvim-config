@@ -6,10 +6,6 @@ return {
     ---@type snacks.Config
     opts = {
       bigfile = { enabled = true },
-      explorer = {
-        enabled = true,
-        layout = { preset = 'sidebar', position = 'right' },
-      },
       indent = {
         enabled = true,
         animate = { enabled = false },
@@ -18,17 +14,13 @@ return {
       notifier = {
         enabled = true,
         timeout = 3000,
+        top_down = false,
       },
       picker = {
         enabled = true,
         sources = {
           files = { hidden = true, ignored = true },
           grep = { hidden = true, ignored = true },
-          explorer = {
-            hidden = true,
-            ignored = true,
-            layout = { layout = { position = 'right' } },
-          },
         },
       },
       quickfile = { enabled = true },
@@ -57,13 +49,6 @@ return {
           Snacks.picker.grep()
         end,
         desc = 'Grep',
-      },
-      {
-        '<leader>e',
-        function()
-          Snacks.explorer()
-        end,
-        desc = 'File Explorer',
       },
       {
         '<leader>fb',

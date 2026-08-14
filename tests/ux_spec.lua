@@ -1,8 +1,21 @@
 local helpers = dofile(vim.fn.getcwd() .. '/tests/helpers.lua')
 local failures = helpers.collect()
 local plugins = helpers.plugins()
+local snacks_spec = dofile(vim.fn.getcwd() .. '/lua/plugins/editor/snacks.lua')
+local snacks_opts = snacks_spec[1].opts
 
 helpers.check(failures, plugins['snacks.nvim'] ~= nil, 'Snacks is missing')
+helpers.check(failures, plugins['neo-tree.nvim'] ~= nil, 'Neo-tree is missing')
+helpers.check(
+  failures,
+  snacks_opts.explorer == nil,
+  'Snacks Explorer must be disabled'
+)
+helpers.check(
+  failures,
+  snacks_opts.picker.sources.explorer == nil,
+  'Snacks picker Explorer source must be disabled'
+)
 helpers.check(
   failures,
   plugins['smart-splits.nvim'] ~= nil,
@@ -11,7 +24,6 @@ helpers.check(
 
 for _, plugin in ipairs {
   'fzf-lua',
-  'neo-tree.nvim',
   'dressing.nvim',
   'lazygit.nvim',
   'indent-blankline.nvim',

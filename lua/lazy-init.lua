@@ -20,6 +20,7 @@ require('lazy').setup {
     { import = 'plugins.editor.grug-far' },
     { import = 'plugins.editor.leap' },
     { import = 'plugins.editor.mini' },
+    { import = 'plugins.editor.neo-tree' },
     { import = 'plugins.editor.overseer' },
     { import = 'plugins.editor.smart-splits' },
     { import = 'plugins.editor.snacks' },
