@@ -51,6 +51,28 @@ h.check(
   'restore must source the saved buffer'
 )
 
+-- Verify neo-tree window and buffer are ignored during save
+vim.cmd('lcd ' .. vim.fn.fnameescape(project))
+vim.cmd('enew')
+vim.cmd('file session-test-neotree.txt')
+vim.cmd('vsplit')
+local neo_buf = vim.api.nvim_create_buf(false, true)
+vim.bo[neo_buf].filetype = 'neo-tree'
+vim.api.nvim_win_set_buf(0, neo_buf)
+session.save()
+local session_content = vim.fn.readfile(saved_path)
+local has_neotree = false
+for _, line in ipairs(session_content) do
+  if line:match('neo%-tree') then
+    has_neotree = true
+    break
+  end
+end
+h.check(
+  failures,
+  not has_neotree,
+  'session file must not contain neo-tree windows or buffers'
+);
 session.delete()
 h.check(
   failures,

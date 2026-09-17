@@ -19,6 +19,17 @@ local function normalize(directory)
   return uv.fs_realpath(directory) or vim.fn.fnamemodify(directory, ':p')
 end
 
+local function close_neotree()
+  for _, win in ipairs(vim.api.nvim_list_wins()) do
+    if vim.api.nvim_win_is_valid(win) then
+      local buf = vim.api.nvim_win_get_buf(win)
+      if vim.api.nvim_buf_is_valid(buf) and vim.bo[buf].filetype == 'neo-tree' then
+        pcall(vim.api.nvim_win_close, win, true)
+      end
+    end
+  end
+end
+
 function M.session_path(directory)
   directory = normalize(directory or vim.fn.getcwd())
   if not eligible(directory) then
@@ -41,6 +52,8 @@ function M.save()
     notify_error('Could not create session directory: ' .. session_dir)
     return
   end
+
+  close_neotree()
 
   local ok, err = pcall(vim.cmd, 'mksession! ' .. vim.fn.fnameescape(path))
   if not ok then
