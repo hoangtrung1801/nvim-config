@@ -39,7 +39,9 @@ function M.session_path(directory)
 end
 
 function M.should_restore(argv)
-  return #argv == 0
+  argv = argv or vim.fn.argv()
+  local stdin_active = vim.bo.buftype == '' and (vim.fn.line '$' > 1 or vim.fn.getline(1) ~= '')
+  return #argv == 0 and not stdin_active
 end
 
 function M.save()
@@ -93,7 +95,7 @@ function M.setup()
   vim.api.nvim_create_autocmd('VimEnter', {
     group = group,
     callback = function()
-      if vim.fn.argc() == 0 then
+      if M.should_restore(vim.fn.argv()) then
         vim.schedule(M.restore)
       end
     end,

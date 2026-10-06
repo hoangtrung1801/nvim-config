@@ -88,6 +88,11 @@ return {
           icon = { icon = '', color = 'red' },
         },
         {
+          '<leader>q',
+          group = 'Quit / Session',
+          icon = { icon = '󰈆', color = 'red' },
+        },
+        {
           '<leader>s',
           group = 'Search',
           icon = { icon = '', color = 'yellow' },

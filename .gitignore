@@ -6,4 +6,5 @@ nvim
 
 spell/
 lazy-lock.json
+.lavish/
 

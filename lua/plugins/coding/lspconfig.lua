@@ -11,6 +11,7 @@ return {
   {
     'neovim/nvim-lspconfig',
     event = { 'BufReadPre', 'BufNewFile' },
+    cmd = { 'MasonToolsInstall', 'MasonToolsUpdate', 'MasonToolsClean' },
     dependencies = {
       'saghen/blink.cmp',
       { 'williamboman/mason.nvim', cmd = 'Mason', opts = {} },
@@ -105,7 +106,7 @@ return {
               lsp_action 'source.removeUnused.ts',
               'Remove Unused Imports'
             )
-            map('<leader>cD', lsp_action 'source.fixAll', 'Fix All Diagnostics')
+            map('<leader>cF', lsp_action 'source.fixAll', 'Fix All Diagnostics')
           end
 
           if client:supports_method 'textDocument/documentHighlight' then

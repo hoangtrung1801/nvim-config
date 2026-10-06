@@ -14,6 +14,16 @@ return {
       },
     },
     opts = function()
+      Snacks.toggle({
+        name = 'Autoformat (Global)',
+        get = function()
+          return not vim.g.disable_autoformat
+        end,
+        set = function(state)
+          vim.g.disable_autoformat = not state
+        end,
+      }):map '<leader>uf'
+
       return {
         formatters_by_ft = require('config.languages').formatters_by_ft,
         default_format_opts = { lsp_format = 'fallback' },

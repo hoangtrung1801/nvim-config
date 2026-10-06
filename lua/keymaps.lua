@@ -51,12 +51,9 @@ end, { desc = 'Delete Buffer' })
 keymap.set('n', '<leader>bo', function()
   Snacks.bufdelete.other()
 end, { desc = 'Delete Other Buffers' })
-keymap.set(
-  'n',
-  '<leader>bD',
-  '<cmd>:bd<cr>',
-  { desc = 'Delete Buffer and Window' }
-)
+keymap.set('n', '<leader>bD', function()
+  Snacks.bufdelete { force = true }
+end, { desc = 'Force Delete Buffer' })
 
 -- Highlight when yanking (copying) text
 vim.api.nvim_create_autocmd('TextYankPost', {
@@ -78,4 +75,4 @@ keymap.set('i', 'jj', '<esc>')
 keymap.set('i', 'jk', '<esc>')
 
 keymap.set('n', ';', ':')
-keymap.set('n', '<leader>q', ':q<cr>')
+keymap.set('n', '<leader>qq', '<cmd>q<cr>', { desc = 'Quit' })
